@@ -1,0 +1,40 @@
+#include<stdio.h>
+int main()
+{
+    int i,limit,j,arr[10],temp,count=0,space=24;
+    printf("Enter the limit of the array");
+    scanf("%d",&limit);
+    space=space+limit*4;
+    printf("enter the %d elements of the array ",limit);
+    for(i=0;i<limit;i++)
+    {
+    count++;
+    scanf("%d",&arr[i]);
+    }
+    count++;
+    printf("SORTED ARRAY USING SELECTION SORTING : ");
+    for (i = 0;i<limit-1;i++)
+    { count++;
+        for(j=i+1;j<limit;j++)
+        {
+            count++;
+           if(arr[i]>arr[j])
+           {
+               temp=arr[i];
+               arr[i]=arr[j];
+               arr[j]=temp;
+                count+=3;
+           }
+        }
+         count++;
+    }
+count++;
+    for (i = 0; i < limit; i++)
+    {  count++;
+        printf("%d\t",arr[i]); 
+    }
+     count++;
+     printf("\nspace complexity :%d",space);
+     printf("time complexity :%d",count);
+return 0;
+}
